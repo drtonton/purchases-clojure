@@ -18,7 +18,13 @@
         (println "Choose item category: Alcohol, Shoes, Furniture, Toiletries, Food, Jewelry")
         (def cats'("Alcohol" "Shoes" "Furniture" "Toiletries" "Food" "Jewelry"))
         (let [text (read-line)
-              (if (= true [contains? cats text]))])]))
+              (if (= true (contains? cats text))
+                purchases (filter (fn [line]))
+                         (= (:category line) text)
+                       purchases)]
+          (spit "filtered_purchases.edn" (pr-str purchases))
+          purchases)]))
+             
                 
              
                       
